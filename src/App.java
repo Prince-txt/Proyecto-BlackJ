@@ -32,7 +32,7 @@ public class App {
             boolean conti = true;
 
             while (conti) {
-                mostrarmanos(jugador, Cjugador, "JUGADOR");
+                mostrarmanos(jugador, Cjugador, " JUGADOR tus cartas son: ");
 
                 int puntos = calcular(jugador, Cjugador);
 
@@ -46,7 +46,7 @@ public class App {
                 int opcion = 0;
 
                 try {
-                    opcion = Integer.parseInt(JOptionPane.showInputDialog("1. Pedir carta" + "2. Quedarse"));
+                    opcion = Integer.parseInt(JOptionPane.showInputDialog("1. Pedir carta" + "  2. Quedarse"));
 
                     switch (opcion) {
                         case 1:
@@ -74,7 +74,7 @@ public class App {
                     Cdealer = repartir(Dealer, Cdealer, random);
                 }
 
-                mostrarmanos(Dealer, Cdealer,"Dealer");
+                mostrarmanos(Dealer, Cdealer," Dealer ");
 
                 int Jpuntos = calcular(jugador,Cjugador);
                 int Dpuntos = calcular(Dealer, Cdealer);
@@ -111,7 +111,7 @@ public class App {
                     
                     try {
 
-                        Fop = Integer.parseInt(JOptionPane.showInputDialog("1.Seguir jugando " + "2. Salir"));
+                        Fop = Integer.parseInt(JOptionPane.showInputDialog("1.Seguir jugando " + "  2. Salir"));
 
                         switch (Fop) {
                             case 1:
@@ -195,7 +195,7 @@ public class App {
         };
 
         String[] simbolo = {
-            "Corazones", "Picas","Treboles","Diamantes"
+            " de Corazones ", " de Picas "," de Treboles "," de Diamantes "
         };
 
         mano[cantidad][0] = valores[random.nextInt(13)];
@@ -249,7 +249,7 @@ public class App {
 
         while (!verd) {
             try {   
-                int dineros = Integer.parseInt(JOptionPane.showInputDialog("Ingrese dinero en dolares para jugar. -el monto minimo es de 1000"));
+                int dineros = Integer.parseInt(JOptionPane.showInputDialog("Ingrese dinero en dolares para jugar. El monto minimo es de 1000"));
 
                 if (dineros <= 0) {
                     JOptionPane.showMessageDialog(null, "ingrese un valor mayor a 0");
