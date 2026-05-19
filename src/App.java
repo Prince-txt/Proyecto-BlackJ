@@ -22,8 +22,34 @@ public class App {
             int Cdealer = 0;
 
             int apuesta = pedir(fichas);
+
+            Cjugador = repartir(jugador,Cjugador, random);
+            Cjugador = repartir(jugador,Cjugador, random);
+
+            Cdealer = repartir(Dealer, Cdealer, random);
+            Cdealer = repartir(Dealer, Cdealer, random);
+            
         }
         
+    }
+
+    public static int repartir(String[][] mano, int cantidad, Random random){
+
+        String[] valores = {
+            "A","2","3","4","5","6","7","8","9","10","J","Q","K"
+        };
+
+        String[] simbolo = {
+            "Corazones", "Picas","Treboles","Diamantes"
+        };
+
+        mano[cantidad][0] = valores[random.nextInt(13)];
+        mano[cantidad][1] = simbolo[random.nextInt(4)];
+
+        cantidad++;
+
+        return cantidad;
+
     }
 
     public static int pedir(int fichas){
@@ -46,7 +72,7 @@ public class App {
                 }else{
                     
                     verd = true;
-                    
+
                 }
             }catch(Exception e){
 
